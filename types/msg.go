@@ -3,7 +3,7 @@ package types
 import "github.com/cosmos/cosmos-sdk/types"
 
 type (
-	TxMsg struct {
+	DocTxMsg struct {
 		Type string `bson:"type"`
 		Msg  Msg    `bson:"msg"`
 	}

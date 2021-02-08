@@ -9,7 +9,7 @@ import (
 
 func CreateMsgDocInfo(msg sdk.Msg, handler func() (Msg, []string)) MsgDocInfo {
 	var (
-		docTxMsg models.TxMsg
+		docTxMsg models.DocTxMsg
 		signers  []string
 		addrs    []string
 	)
@@ -17,7 +17,7 @@ func CreateMsgDocInfo(msg sdk.Msg, handler func() (Msg, []string)) MsgDocInfo {
 	m, addrcollections := handler()
 
 	m.BuildMsg(msg)
-	docTxMsg = models.TxMsg{
+	docTxMsg = models.DocTxMsg{
 		Type: m.GetType(),
 		Msg:  m,
 	}

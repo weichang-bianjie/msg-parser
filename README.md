@@ -5,7 +5,7 @@ Tx msg parser for block chain which built with cosmos-sdk
 
 ### Requirement
 
-Go version above 1.15
+Go version 1.14
 
 ### Use Go Mod
 

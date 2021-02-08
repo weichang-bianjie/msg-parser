@@ -4,7 +4,6 @@ import (
 	stake "github.com/cosmos/cosmos-sdk/x/staking/types"
 	cdc "github.com/kaifei-bianjie/msg-parser/codec"
 	. "github.com/kaifei-bianjie/msg-parser/modules"
-	"github.com/kaifei-bianjie/msg-parser/utils"
 )
 
 // MsgCreateValidator defines an SDK message for creating a new validator.
@@ -24,10 +23,7 @@ func (doctx *DocTxMsgCreateValidator) GetType() string {
 
 func (doctx *DocTxMsgCreateValidator) BuildMsg(txMsg interface{}) {
 	msg := txMsg.(*MsgStakeCreate)
-	if msg.Pubkey != nil {
-		doctx.Pubkey = utils.MarshalJsonIgnoreErr(msg.Pubkey)
-	}
-
+	doctx.Pubkey = ConvertAny(msg.Pubkey)
 	doctx.ValidatorAddress = msg.ValidatorAddress
 	doctx.DelegatorAddress = msg.DelegatorAddress
 	doctx.MinSelfDelegation = msg.MinSelfDelegation.String()

@@ -1,6 +1,7 @@
 package msgs
 
 import (
+	"github.com/bianjieai/iritamod/modules/identity"
 	//"github.com/CosmWasm/wasmd/x/wasm"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	bank "github.com/cosmos/cosmos-sdk/x/bank/types"
@@ -24,6 +25,7 @@ import (
 	service "github.com/irisnet/irismod/modules/service/types"
 	token "github.com/irisnet/irismod/modules/token/types"
 	models "github.com/kaifei-bianjie/msg-parser/types"
+	cschainibc "gitlab.bianjie.ai/cschain/cschain/modules/ibc/core/types"
 )
 
 const (
@@ -82,6 +84,9 @@ const (
 	MsgTypeSubmitEvidence  = "submit_evidence"
 	MsgTypeVerifyInvariant = "verify_invariant"
 
+	MsgTypeUpdateIdentity = "update_identity"
+	MsgTypeCreateIdentity = "create_identity"
+
 	//ibc client
 	MsgTypeCreateClient             = "create_client"
 	MsgTypeUpdateClient             = "update_client"
@@ -125,7 +130,7 @@ const (
 
 type (
 	MsgDocInfo struct {
-		DocTxMsg models.TxMsg
+		DocTxMsg models.DocTxMsg
 		Addrs    []string
 		Signers  []string
 	}
@@ -163,9 +168,9 @@ type (
 
 	MsgRecordCreate = record.MsgCreateRecord
 
-	MsgIssueToken         = token.MsgIssueToken
-	MsgEditToken          = token.MsgEditToken
-	MsgBurnToken          = token.MsgBurnToken
+	MsgIssueToken = token.MsgIssueToken
+	MsgEditToken  = token.MsgEditToken
+	//MsgBurnToken          = token.MsgBurnToken
 	MsgMintToken          = token.MsgMintToken
 	MsgTransferTokenOwner = token.MsgTransferTokenOwner
 
@@ -232,6 +237,13 @@ type (
 	MsgStartFeed  = oracle.MsgStartFeed
 
 	MsgRequestRandom = random.MsgRequestRandom
+
+	MsgCreateIdentity = identity.MsgCreateIdentity
+	MsgUpdateIdentity = identity.MsgUpdateIdentity
+
+	MsgCsRecvPacket   = cschainibc.MsgRecvPacket
+	MsgCsCreateClient = cschainibc.MsgCreateClient
+	MsgCsUpdateClient = cschainibc.MsgUpdateClient
 
 	//MsgStoreCode           = wasm.MsgStoreCode
 	//MsgInstantiateContract = wasm.MsgInstantiateContract

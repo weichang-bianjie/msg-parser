@@ -1,14 +1,13 @@
 package ibc
 
 import (
-	ibctransfer "github.com/cosmos/cosmos-sdk/x/ibc/applications/transfer"
-	ibc "github.com/cosmos/cosmos-sdk/x/ibc/core"
 	"github.com/kaifei-bianjie/msg-parser/codec"
+	ibcrecord "gitlab.bianjie.ai/cschain/cschain/modules/ibc/applications/record"
+	ibc "gitlab.bianjie.ai/cschain/cschain/modules/ibc/core"
 )
 
 func init() {
 	codec.RegisterAppModules(
 		ibc.AppModuleBasic{},
-		ibctransfer.AppModuleBasic{},
-	)
+		ibcrecord.AppModuleBasic{})
 }
