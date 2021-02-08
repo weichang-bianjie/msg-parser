@@ -45,7 +45,6 @@ type MsgClient struct {
 	Record       record.Client
 	Coinswap     coinswap.Client
 	Identity     identity.Client
-	//Wasm         wasm.Client
 }
 
 func NewMsgClient() MsgClient {
@@ -71,6 +70,5 @@ func NewMsgClient() MsgClient {
 		Token:        token.NewClient(),
 		Coinswap:     coinswap.NewClient(),
 		Identity:     identity.NewClient(),
-		//Wasm:         wasm.NewClient(),
 	}
 }
