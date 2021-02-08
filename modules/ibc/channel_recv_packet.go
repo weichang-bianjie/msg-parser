@@ -78,7 +78,8 @@ func (m *DocMsgRecvPacket) HandleTxMsg(v SdkMsg) MsgDocInfo {
 	)
 
 	utils.UnMarshalJsonIgnoreErr(utils.MarshalJsonIgnoreErr(v), &msg)
-	addrs = append(addrs, msg.Signer)
+	packetData := DecodeToIBCRecord(msg.Packet)
+	addrs = append(addrs, msg.Signer, packetData.Creator)
 	handler := func() (Msg, []string) {
 		return m, addrs
 	}

@@ -2,6 +2,7 @@ package integration
 
 import (
 	msg_parser "github.com/kaifei-bianjie/msg-parser"
+	. "github.com/kaifei-bianjie/msg-parser/codec"
 	"github.com/stretchr/testify/suite"
 	"testing"
 )
@@ -21,5 +22,7 @@ func TestSuite(t *testing.T) {
 }
 
 func (s *IntegrationTestSuite) SetupSuite() {
+	SetBech32Prefix(Bech32PrefixAccAddr, Bech32PrefixAccPub, Bech32PrefixValAddr,
+		Bech32PrefixValPub, Bech32PrefixConsAddr, Bech32PrefixConsPub)
 	s.MsgClient = msg_parser.NewMsgClient()
 }
