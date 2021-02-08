@@ -39,7 +39,7 @@ use in sync
 
 var (
 	docTx models.Tx
-	docTxMsgs []msg_parser.DocTxMsg
+	docTxMsgs []msg_parser.TxMsg
     	)
 	authTx := Tx.(signing.Tx)
 	......
