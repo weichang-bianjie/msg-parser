@@ -105,7 +105,7 @@ const (
 
 type (
 	MsgDocInfo struct {
-		DocTxMsg models.DocTxMsg
+		DocTxMsg models.TxMsg
 		Addrs    []string
 		Signers  []string
 	}
