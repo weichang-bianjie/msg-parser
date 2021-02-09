@@ -1,22 +1,17 @@
 package record
 
 type Content struct {
-	DigestAlgo string `json:"digest_algo"`
-	Digest     string `json:"digest"`
-	URI        string `json:"uri"`
-	Meta       string `json:"meta"`
+	DigestAlgo string `bson:"digest_algo"`
+	Digest     string `bson:"digest"`
+	URI        string `bson:"uri"`
+	Meta       string `bson:"meta"`
 }
 
 type Packet struct {
-	ID        string     `json:"id"`
-	Timestamp uint64     `json:"timestamp,string"`
-	Height    uint64     `json:"height,string"`
-	TxHash    string     `json:"tx_hash"`
-	Contents  []*Content `json:"contents"`
-	Creator   string     `json:"creator"`
-}
-
-type IBCRecord struct {
-	Type  string `json:"type"`
-	Value Packet `json:"value"`
+	ID        string     `bson:"id"`
+	Timestamp uint64     `bson:"timestamp"`
+	Height    uint64     `bson:"height"`
+	TxHash    string     `bson:"tx_hash"`
+	Contents  []*Content `bson:"contents"`
+	Creator   string     `bson:"creator"`
 }
