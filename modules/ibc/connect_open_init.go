@@ -1,6 +1,7 @@
 package ibc
 
 import (
+	"fmt"
 	. "github.com/kaifei-bianjie/msg-parser/modules"
 	"github.com/kaifei-bianjie/msg-parser/utils"
 )
@@ -9,7 +10,7 @@ type DocMsgConnectionOpenInit struct {
 	ClientId     string       `bson:"client_id"`
 	Counterparty Counterparty `bson:"counterparty"`
 	Version      Version      `bson:"version"`
-	DelayPeriod  uint64       `bson:"delay_period"`
+	DelayPeriod  string       `bson:"delay_period"`
 	Signer       string       `bson:"signer"`
 }
 
@@ -20,7 +21,7 @@ func (m *DocMsgConnectionOpenInit) GetType() string {
 func (m *DocMsgConnectionOpenInit) BuildMsg(v interface{}) {
 	msg := v.(*MsgConnectionOpenInit)
 	m.ClientId = msg.ClientId
-	m.DelayPeriod = msg.DelayPeriod
+	m.DelayPeriod = fmt.Sprint(msg.DelayPeriod)
 	m.Signer = msg.Signer
 	if msg.Version != nil {
 		m.Version = Version{

@@ -1,6 +1,7 @@
 package service
 
 import (
+	"fmt"
 	. "github.com/kaifei-bianjie/msg-parser/modules"
 	models "github.com/kaifei-bianjie/msg-parser/types"
 )
@@ -15,7 +16,7 @@ type (
 		Timeout           int64        `bson:"timeout"`
 		SuperMode         bool         `bson:"super_mode"`
 		Repeated          bool         `bson:"repeated"`
-		RepeatedFrequency uint64       `bson:"repeated_frequency"`
+		RepeatedFrequency string       `bson:"repeated_frequency"`
 		RepeatedTotal     int64        `bson:"repeated_total"`
 	}
 )
@@ -36,7 +37,7 @@ func (m *DocMsgCallService) BuildMsg(msg interface{}) {
 	//m.Input = hex.EncodeToString(v.Input)
 	m.SuperMode = v.SuperMode
 	m.Repeated = v.Repeated
-	m.RepeatedFrequency = v.RepeatedFrequency
+	m.RepeatedFrequency = fmt.Sprint(v.RepeatedFrequency)
 	m.RepeatedTotal = v.RepeatedTotal
 }
 

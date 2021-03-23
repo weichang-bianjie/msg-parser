@@ -1,13 +1,14 @@
 package oracle
 
 import (
+	"fmt"
 	. "github.com/kaifei-bianjie/msg-parser/modules"
 	"github.com/kaifei-bianjie/msg-parser/types"
 )
 
 type DocMsgCreateFeed struct {
 	FeedName          string       `bson:"feed_name" yaml:"feed_name"`
-	LatestHistory     uint64       `bson:"latest_history" yaml:"latest_history"`
+	LatestHistory     string       `bson:"latest_history" yaml:"latest_history"`
 	Description       string       `bson:"description"`
 	Creator           string       `bson:"creator"`
 	ServiceName       string       `bson:"service_name" yaml:"service_name"`
@@ -15,7 +16,7 @@ type DocMsgCreateFeed struct {
 	Input             string       `bson:"input"`
 	Timeout           int64        `bson:"timeout"`
 	ServiceFeeCap     []types.Coin `bson:"service_fee_cap" yaml:"service_fee_cap"`
-	RepeatedFrequency uint64       `bson:"repeated_frequency" yaml:"repeated_frequency"`
+	RepeatedFrequency string       `bson:"repeated_frequency" yaml:"repeated_frequency"`
 	AggregateFunc     string       `bson:"aggregate_func" yaml:"aggregate_func"`
 	ValueJsonPath     string       `bson:"value_json_path" yaml:"value_json_path"`
 	ResponseThreshold uint32       `bson:"response_threshold" yaml:"response_threshold"`
@@ -30,7 +31,7 @@ func (m *DocMsgCreateFeed) BuildMsg(v interface{}) {
 	msg := v.(*MsgCreateFeed)
 
 	m.FeedName = msg.FeedName
-	m.LatestHistory = msg.LatestHistory
+	m.LatestHistory = fmt.Sprint(msg.LatestHistory)
 	m.Description = msg.Description
 	m.Creator = msg.Creator
 	m.ServiceName = msg.ServiceName
@@ -38,7 +39,7 @@ func (m *DocMsgCreateFeed) BuildMsg(v interface{}) {
 	m.Input = msg.Input
 	m.Timeout = msg.Timeout
 	m.ServiceFeeCap = types.BuildDocCoins(msg.ServiceFeeCap)
-	m.RepeatedFrequency = msg.RepeatedFrequency
+	m.RepeatedFrequency = fmt.Sprint(msg.RepeatedFrequency)
 	m.AggregateFunc = msg.AggregateFunc
 	m.ValueJsonPath = msg.ValueJsonPath
 	m.ResponseThreshold = msg.ResponseThreshold

@@ -1,6 +1,7 @@
 package service
 
 import (
+	"fmt"
 	. "github.com/kaifei-bianjie/msg-parser/modules"
 	models "github.com/kaifei-bianjie/msg-parser/types"
 )
@@ -11,7 +12,7 @@ type (
 		Provider    string       `bson:"provider" yaml:"provider"`
 		Deposit     models.Coins `bson:"deposit" yaml:"deposit"`
 		Pricing     string       `bson:"pricing" yaml:"pricing"`
-		QoS         uint64       `bson:"qos" yaml:"qos"`
+		QoS         string       `bson:"qos" yaml:"qos"`
 		Owner       string       `bson:"owner" yaml:"owner"`
 	}
 )
@@ -27,7 +28,7 @@ func (m *DocMsgUpdateServiceBinding) BuildMsg(v interface{}) {
 	m.Provider = msg.Provider
 	m.Deposit = models.BuildDocCoins(msg.Deposit)
 	m.Pricing = msg.Pricing
-	m.QoS = msg.QoS
+	m.QoS = fmt.Sprint(msg.QoS)
 	m.Owner = msg.Owner
 }
 
