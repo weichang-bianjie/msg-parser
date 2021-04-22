@@ -3,7 +3,6 @@ package ibc
 import (
 	cdc "github.com/kaifei-bianjie/msg-parser/codec"
 	. "github.com/kaifei-bianjie/msg-parser/modules"
-	"github.com/kaifei-bianjie/msg-parser/utils"
 )
 
 type DocMsgUpgradeClient struct {
@@ -24,9 +23,9 @@ func (m *DocMsgUpgradeClient) BuildMsg(v interface{}) {
 	m.Signer = msg.Signer
 	m.ClientId = msg.ClientId
 	m.ClientState = ConvertAny(msg.ClientState)
-	m.ConsensusState = ConvertAny(msg.ConsensusState)
-	m.ProofUpgradeClient = utils.MarshalJsonIgnoreErr(msg.ProofUpgradeClient)
-	m.ProofUpgradeConsensusState = utils.MarshalJsonIgnoreErr(msg.ProofUpgradeConsensusState)
+	//m.ConsensusState = ConvertAny(msg.ConsensusState)
+	//m.ProofUpgradeClient = utils.MarshalJsonIgnoreErr(msg.ProofUpgradeClient)
+	//m.ProofUpgradeConsensusState = utils.MarshalJsonIgnoreErr(msg.ProofUpgradeConsensusState)
 }
 
 func (m *DocMsgUpgradeClient) HandleTxMsg(v SdkMsg) MsgDocInfo {

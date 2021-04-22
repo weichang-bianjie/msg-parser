@@ -19,8 +19,8 @@ func (m *DocMsgRecvPacket) GetType() string {
 func (m *DocMsgRecvPacket) BuildMsg(v interface{}) {
 	msg := v.(*MsgRecvPacket)
 	m.Signer = msg.Signer
-	m.ProofHeight = loadHeight(msg.ProofHeight)
-	m.ProofCommitment = utils.MarshalJsonIgnoreErr(msg.ProofCommitment)
+	//m.ProofHeight = loadHeight(msg.ProofHeight)
+	//m.ProofCommitment = utils.MarshalJsonIgnoreErr(msg.ProofCommitment)
 	m.Packet = loadPacket(msg.Packet)
 
 }

@@ -163,9 +163,9 @@ type (
 
 	MsgRecordCreate = record.MsgCreateRecord
 
-	MsgIssueToken         = token.MsgIssueToken
-	MsgEditToken          = token.MsgEditToken
-	MsgBurnToken          = token.MsgBurnToken
+	MsgIssueToken = token.MsgIssueToken
+	MsgEditToken  = token.MsgEditToken
+	//MsgBurnToken          = token.MsgBurnToken
 	MsgMintToken          = token.MsgMintToken
 	MsgTransferTokenOwner = token.MsgTransferTokenOwner
 

@@ -27,7 +27,7 @@ func (m *DocMsgChannelOpenAck) BuildMsg(v interface{}) {
 	m.CounterpartyChannelId = msg.CounterpartyChannelId
 	m.CounterpartyVersion = msg.CounterpartyVersion
 	m.ProofTry = utils.MarshalJsonIgnoreErr(msg.ProofTry)
-	m.ProofHeight = loadHeight(msg.ProofHeight)
+	//m.ProofHeight = loadHeight(msg.ProofHeight)
 
 }
 

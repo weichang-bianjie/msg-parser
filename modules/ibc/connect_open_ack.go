@@ -38,8 +38,8 @@ func (m *DocMsgConnectionOpenAck) BuildMsg(v interface{}) {
 	m.ProofTry = utils.MarshalJsonIgnoreErr(msg.ProofTry)
 	m.ProofClient = utils.MarshalJsonIgnoreErr(msg.ProofClient)
 	m.ProofConsensus = utils.MarshalJsonIgnoreErr(msg.ProofConsensus)
-	m.ProofHeight = loadHeight(msg.ProofHeight)
-	m.ConsensusHeight = loadHeight(msg.ConsensusHeight)
+	//m.ProofHeight = loadHeight(msg.ProofHeight)
+	//m.ConsensusHeight = loadHeight(msg.ConsensusHeight)
 
 }
 

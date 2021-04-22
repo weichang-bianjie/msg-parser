@@ -23,11 +23,11 @@ func (m *DocMsgChannelOpenTry) BuildMsg(v interface{}) {
 	msg := v.(*MsgChannelOpenTry)
 	m.Signer = msg.Signer
 	m.PortId = msg.PortId
-	m.PreviousChannelId = msg.PreviousChannelId
+	//m.PreviousChannelId = msg.PreviousChannelId
 	m.Channel = loadChannel(msg.Channel)
 	m.CounterpartyVersion = msg.CounterpartyVersion
 	m.ProofInit = utils.MarshalJsonIgnoreErr(msg.ProofInit)
-	m.ProofHeight = loadHeight(msg.ProofHeight)
+	//m.ProofHeight = loadHeight(msg.ProofHeight)
 }
 
 func (m *DocMsgChannelOpenTry) HandleTxMsg(v SdkMsg) MsgDocInfo {

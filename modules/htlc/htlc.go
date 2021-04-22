@@ -31,8 +31,8 @@ func (doctx *DocTxMsgCreateHTLC) BuildMsg(txMsg interface{}) {
 	doctx.HashLock = msg.HashLock
 	doctx.TimeLock = msg.TimeLock
 	doctx.ReceiverOnOtherChain = msg.ReceiverOnOtherChain
-	doctx.SenderOnOtherChain = msg.SenderOnOtherChain
-	doctx.Transfer = msg.Transfer
+	//doctx.SenderOnOtherChain = msg.SenderOnOtherChain
+	//doctx.Transfer = msg.Transfer
 }
 
 func (m *DocTxMsgCreateHTLC) HandleTxMsg(v sdk.Msg) MsgDocInfo {
@@ -65,7 +65,7 @@ func (doctx *DocTxMsgClaimHTLC) BuildMsg(txMsg interface{}) {
 	msg := txMsg.(*MsgClaimHTLC)
 	doctx.Sender = msg.Sender
 	doctx.Secret = msg.Secret
-	doctx.Id = msg.Id
+	//doctx.Id = msg.Id
 }
 
 func (m *DocTxMsgClaimHTLC) HandleTxMsg(v sdk.Msg) MsgDocInfo {

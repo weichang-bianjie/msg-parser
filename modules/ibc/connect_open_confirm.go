@@ -21,7 +21,7 @@ func (m *DocMsgConnectionOpenConfirm) BuildMsg(v interface{}) {
 	m.Signer = msg.Signer
 	m.ConnectionId = msg.ConnectionId
 	m.ProofAck = utils.MarshalJsonIgnoreErr(msg.ProofAck)
-	m.ProofHeight = loadHeight(msg.ProofHeight)
+	//m.ProofHeight = loadHeight(msg.ProofHeight)
 }
 
 func (m *DocMsgConnectionOpenConfirm) HandleTxMsg(v SdkMsg) MsgDocInfo {

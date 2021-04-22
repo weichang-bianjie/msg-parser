@@ -20,7 +20,7 @@ func (m *DocMsgConnectionOpenInit) GetType() string {
 func (m *DocMsgConnectionOpenInit) BuildMsg(v interface{}) {
 	msg := v.(*MsgConnectionOpenInit)
 	m.ClientId = msg.ClientId
-	m.DelayPeriod = msg.DelayPeriod
+	//m.DelayPeriod = msg.DelayPeriod
 	m.Signer = msg.Signer
 	if msg.Version != nil {
 		m.Version = Version{

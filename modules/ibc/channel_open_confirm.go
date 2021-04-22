@@ -23,7 +23,7 @@ func (m *DocMsgChannelOpenConfirm) BuildMsg(v interface{}) {
 	m.PortId = msg.PortId
 	m.ChannelId = msg.ChannelId
 	m.ProofAck = utils.MarshalJsonIgnoreErr(msg.ProofAck)
-	m.ProofHeight = loadHeight(msg.ProofHeight)
+	//m.ProofHeight = loadHeight(msg.ProofHeight)
 }
 
 func (m *DocMsgChannelOpenConfirm) HandleTxMsg(v SdkMsg) MsgDocInfo {

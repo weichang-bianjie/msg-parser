@@ -21,9 +21,9 @@ func (m *DocMsgTimeout) BuildMsg(v interface{}) {
 	msg := v.(*MsgTimeout)
 	m.Signer = msg.Signer
 	m.NextSequenceRecv = msg.NextSequenceRecv
-	m.ProofUnreceived = utils.MarshalJsonIgnoreErr(msg.ProofUnreceived)
+	//m.ProofUnreceived = utils.MarshalJsonIgnoreErr(msg.ProofUnreceived)
 	m.Packet = loadPacket(msg.Packet)
-	m.ProofHeight = loadHeight(msg.ProofHeight)
+	//m.ProofHeight = loadHeight(msg.ProofHeight)
 }
 
 func (m *DocMsgTimeout) HandleTxMsg(v SdkMsg) MsgDocInfo {

@@ -25,7 +25,7 @@ func (m *DocMsgTimeoutOnClose) BuildMsg(v interface{}) {
 	m.ProofUnreceived = utils.MarshalJsonIgnoreErr(m.ProofUnreceived)
 	m.ProofClose = utils.MarshalJsonIgnoreErr(m.ProofClose)
 	m.Packet = loadPacket(msg.Packet)
-	m.ProofHeight = loadHeight(msg.ProofHeight)
+	//m.ProofHeight = loadHeight(msg.ProofHeight)
 }
 
 func (m *DocMsgTimeoutOnClose) HandleTxMsg(v SdkMsg) MsgDocInfo {

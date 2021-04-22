@@ -2,7 +2,6 @@ package ibc
 
 import (
 	"fmt"
-	icoreclient "github.com/cosmos/cosmos-sdk/x/ibc/core/02-client/types"
 	icorechannel "github.com/cosmos/cosmos-sdk/x/ibc/core/04-channel/types"
 	cdc "github.com/kaifei-bianjie/msg-parser/codec"
 	. "github.com/kaifei-bianjie/msg-parser/modules"
@@ -18,7 +17,8 @@ func loadPacket(packet icorechannel.Packet) Packet {
 		DestinationChannel: packet.DestinationChannel,
 		Data:               UnmarshalPacketData(packet.GetData()),
 		TimeoutTimestamp:   packet.TimeoutTimestamp,
-		TimeoutHeight:      loadHeight(packet.TimeoutHeight)}
+		//TimeoutHeight:      loadHeight(packet.TimeoutHeight)
+	}
 }
 
 func UnmarshalPacketData(bytesdata []byte) PacketData {
@@ -34,11 +34,11 @@ func UnmarshalPacketData(bytesdata []byte) PacketData {
 	return data
 }
 
-func loadHeight(height icoreclient.Height) Height {
-	return Height{
-		RevisionNumber: height.RevisionNumber,
-		RevisionHeight: height.RevisionHeight}
-}
+//func loadHeight(height icoreclient.Height) Height {
+//	return Height{
+//		RevisionNumber: height.RevisionNumber,
+//		RevisionHeight: height.RevisionHeight}
+//}
 
 func loadChannel(channel icorechannel.Channel) Channel {
 	return Channel{
