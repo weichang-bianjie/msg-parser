@@ -10,7 +10,6 @@ import (
 	"github.com/kaifei-bianjie/msg-parser/modules/evidence"
 	"github.com/kaifei-bianjie/msg-parser/modules/gov"
 	"github.com/kaifei-bianjie/msg-parser/modules/htlc"
-	"github.com/kaifei-bianjie/msg-parser/modules/ibc"
 	"github.com/kaifei-bianjie/msg-parser/modules/nft"
 	"github.com/kaifei-bianjie/msg-parser/modules/oracle"
 	"github.com/kaifei-bianjie/msg-parser/modules/params"
@@ -31,18 +30,18 @@ type MsgClient struct {
 	Distribution distribution.Client
 	Evidence     evidence.Client
 	Gov          gov.Client
-	Ibc          ibc.Client
-	Params       params.Client
-	Slashing     slashing.Client
-	Upgrade      upgrade.Client
-	Service      service.Client
-	Nft          nft.Client
-	Token        token.Client
-	Random       random.Client
-	Oracle       oracle.Client
-	Htlc         htlc.Client
-	Record       record.Client
-	Coinswap     coinswap.Client
+	//Ibc          ibc.Client
+	Params   params.Client
+	Slashing slashing.Client
+	Upgrade  upgrade.Client
+	Service  service.Client
+	Nft      nft.Client
+	Token    token.Client
+	Random   random.Client
+	Oracle   oracle.Client
+	Htlc     htlc.Client
+	Record   record.Client
+	Coinswap coinswap.Client
 	//Wasm         wasm.Client
 }
 
@@ -55,19 +54,19 @@ func NewMsgClient() MsgClient {
 		Distribution: distribution.NewClient(),
 		Evidence:     distribution.NewClient(),
 		Gov:          gov.NewClient(),
-		Ibc:          ibc.NewClient(),
-		Params:       params.NewClient(),
-		Slashing:     slashing.NewClient(),
-		Upgrade:      upgrade.NewClient(),
-		Staking:      staking.NewClient(),
-		Service:      service.NewClient(),
-		Nft:          nft.NewClient(),
-		Record:       record.NewClient(),
-		Random:       random.NewClient(),
-		Oracle:       oracle.NewClient(),
-		Htlc:         htlc.NewClient(),
-		Token:        token.NewClient(),
-		Coinswap:     coinswap.NewClient(),
+		//Ibc:          ibc.NewClient(),
+		Params:   params.NewClient(),
+		Slashing: slashing.NewClient(),
+		Upgrade:  upgrade.NewClient(),
+		Staking:  staking.NewClient(),
+		Service:  service.NewClient(),
+		Nft:      nft.NewClient(),
+		Record:   record.NewClient(),
+		Random:   random.NewClient(),
+		Oracle:   oracle.NewClient(),
+		Htlc:     htlc.NewClient(),
+		Token:    token.NewClient(),
+		Coinswap: coinswap.NewClient(),
 		//Wasm:         wasm.NewClient(),
 	}
 }
